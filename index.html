@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>EFFECT MENU SMOOTH BASIC</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <ul>
+            <li>
+              <a href="#content1">Content1</a>
+            </li>
+            <li>
+              <a href="#content2">Content2</a>
+            </li>
+            <li>
+              <a href="#content3">Content3</a>
+            </li>
+            <li>
+              <a href="#content4">Content4</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div id="content1" style="background: red">
+        <h2>Content1</h2>
+      </div>
+      <div id="content2" style="background: green">
+        <h2>Content2</h2>
+      </div>
+      <div id="content3" style="background: blue">
+        <h2>Content3</h2>
+      </div>
+      <div id="content4" style="background: orange">
+        <h2>Content4</h2>
+      </div>
+    </div>
+    <script>
+      $('nav ul li a').click(function(e) {
+      if (this.hash !== '') {
+      e.preventDefault();
+      //hash obtiene el elemento clikeado
+      const hash = this.hash;
+             
+      //Animamos el desplazamiento
+      $('html, body').animate({
+       scrollTop: $(hash).offset().top
+      },600);
+      } 	  	
+      });
+    </script>
+  </body>
+</html>
